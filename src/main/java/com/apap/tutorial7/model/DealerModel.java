@@ -15,8 +15,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * DealerModel
@@ -25,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 @Entity
 @Table(name = "dealer")
-@JsonIgnoreProperties({"listCar"})
 public class DealerModel implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,7 +40,7 @@ public class DealerModel implements Serializable{
 	private String noTelp;
 	
 	@OneToMany(mappedBy = "dealer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JsonProperty("listCar")
+	@JsonIgnore
 	private List<CarModel> listCar;
 
 	public long getId() {
