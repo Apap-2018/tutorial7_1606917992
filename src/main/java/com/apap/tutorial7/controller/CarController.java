@@ -24,6 +24,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.apap.tutorial7.model.CarModel;
 import com.apap.tutorial7.model.DealerModel;
+import com.apap.tutorial7.rest.Setting;
 import com.apap.tutorial7.service.CarService;
 import com.apap.tutorial7.service.DealerService;
 
